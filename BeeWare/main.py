@@ -2,7 +2,6 @@ import os
 import sys
 from ButterEssentials.butter_essentials.VChange import data
 import keyboard
-import time
 
 
 def LoginAs():
