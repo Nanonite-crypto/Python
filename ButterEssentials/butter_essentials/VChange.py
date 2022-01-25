@@ -20,6 +20,17 @@ def load_data(filepath):
 class data():
 
     def save_value(name, value, savedAs, debug=False):
+        """
+        Saves a value in a JSON file.
+
+        [summary]
+
+        Args:
+            name ([key]): [Name of Key]
+            value ([type]): [Value in Key]
+            savedAs ([file]): [JSON filename]
+            debug (bool, optional): Defaults to False.
+        """
 
         if value != None:
             SAVED_DATA = savedAs+".json"
@@ -35,13 +46,18 @@ class data():
         else:
             print("Unknown Value.")
 
-    def load_value(name, loadVar, debug=False):
+    def load_value(name, key, debug=False):
+        """[summary]
 
-        if loadVar != None:
+        Returns:
+            value ([type]): [Value in Key]
+        """
+
+        if key != None:
             LOAD_DATA = name+".json"
             data = load_data(LOAD_DATA)
 
-            key = loadVar
+            key = key
             load_data(LOAD_DATA)
             if debug is True:
                 print("Loaded Data.")

@@ -10,12 +10,12 @@ def LoginAs():
 
         if login != "delete" and login:
             if os.path.exists(f"{login}.json"):
-                credentials = data.load_value(name=login, loadVar=login)
+                credentials = data.load_value(name=login, key=login)
                 if credentials != "":
                     pwd = input("Password.. ")
 
             if os.path.exists(f"{login}.json"):
-                credentials = data.load_value(name=login, loadVar=login)
+                credentials = data.load_value(name=login, key=login)
                 if credentials == "":
                     # If there is no actual password assigned give them access to the Account.
                     print("Access Granted.")
@@ -40,12 +40,12 @@ def LoginAs():
             delLogin = input("Delete Login.. ")
 
             if os.path.exists(f"{delLogin}.json"):
-                credentials = data.load_value(name=delLogin, loadVar=delLogin)
+                credentials = data.load_value(name=delLogin, key=delLogin)
                 if credentials != "":
                     pwd = input("Password.. ")
 
             if os.path.exists(f"{delLogin}.json"):
-                credentials = data.load_value(name=delLogin, loadVar=delLogin)
+                credentials = data.load_value(name=delLogin, key=delLogin)
                 if credentials == "":
                     # If there is no actual password assigned give them access to delete the Account.
                     os.remove(f"{delLogin}.json")
